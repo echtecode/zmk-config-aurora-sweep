@@ -123,7 +123,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &kp LG(LEFT)    &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &kp LG(RIGHT_ARROW)  &trans
 &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW         &kp RIGHT_ARROW      &kp BACKSPACE
-&trans  &trans  &trans  &trans  &trans    &trans          &trans              &trans               &trans               &trans
+&trans  &trans  &trans  &trans  &trans    &harpoon1       &harpoon2           &harpoon3            &harpoon4            &trans
 &trans  &trans                                                                                     &trans               &trans
             >;
         };
