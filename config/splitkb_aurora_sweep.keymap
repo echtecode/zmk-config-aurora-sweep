@@ -26,19 +26,14 @@
             bindings = <&mo 4>;
             key-positions = <11 13>;
         };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <16 17>;
+        };
     };
 
     behaviors {
-        esc_or_layer1: esc_or_layer1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC_OR_LAYER1";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-        };
-
         homerow_mods: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
