@@ -21,6 +21,11 @@
             bindings = <&mo 3>;
             key-positions = <12 11>;
         };
+
+        layer4 {
+            bindings = <&mo 4>;
+            key-positions = <11 13>;
+        };
     };
 
     behaviors {
@@ -42,6 +47,55 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        tapdance_questionm_cmdbacktick: tapdance_questionm_cmdbacktick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_QUESTIONM_CMDBACKTICK";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION>, <&kp LG(GRAVE)>;
+        };
+    };
+
+    macros {
+        harpoon1: harpoon1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp NUMBER_1>;
+            label = "HARPOON1";
+            wait-ms = <5>;
+        };
+
+        harpoon2: harpoon2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp NUMBER_2>;
+            label = "HARPOON2";
+            wait-ms = <5>;
+        };
+
+        harpoon3: harpoon3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp NUMBER_3>;
+            label = "HARPOON3";
+            wait-ms = <5>;
+        };
+
+        harpoon4: harpoon4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp NUMBER_4>;
+            label = "HARPOON4";
+            wait-ms = <5>;
+        };
+
+        tmux_sessions: tmux_sessions {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp S>;
+            label = "TMUX_SESSIONS";
+            wait-ms = <5>;
+        };
     };
 
     keymap {
@@ -49,19 +103,19 @@
 
         base {
             bindings = <
-&kp Q                    &kp W           &kp E                 &kp R                  &kp T    &kp Y  &kp U                  &kp I                 &kp O      &kp P
-&kp A                    &kp S           &homerow_mods LCMD D  &homerow_mods LCTRL F  &kp G    &kp H  &homerow_mods RCTRL J  &homerow_mods RCMD K  &kp L      &kp BACKSPACE
-&kp Z                    &kp X           &kp C                 &kp V                  &kp B    &kp N  &kp M                  &kp COMMA             &kp DOT    &none
-&esc_or_layer1 1 ESCAPE  &kp LEFT_SHIFT                                                                                                            &kp ENTER  &kp SPACE
+&kp Q                    &kp W                  &kp E                  &kp R                  &kp T    &kp Y  &kp U                  &kp I                 &kp O      &kp P
+&kp A                    &kp S                  &homerow_mods LCMD D   &homerow_mods LCTRL F  &kp G    &kp H  &homerow_mods RCTRL J  &homerow_mods RCMD K  &kp L      &kp BACKSPACE
+&homerow_mods LG(Z) Z    &homerow_mods LG(X) X  &homerow_mods LG(C) C  &homerow_mods LG(V) V  &kp B    &kp N  &kp M                  &kp COMMA             &kp DOT    &tmux_sessions
+&esc_or_layer1 1 ESCAPE  &kp LEFT_SHIFT                                                                                                                    &kp ENTER  &kp SPACE
             >;
         };
 
         symbols {
             bindings = <
-&kp EXCL   &kp AT         &kp HASH              &kp DLLR           &kp PRCNT           &kp CARET          &kp MINUS        &kp UNDERSCORE         &kp AMPERSAND     &kp ASTERISK
-&kp SLASH  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE     &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BACKSLASH
-&kp TILDE  &kp GRAVE      &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES  &kp EQUAL           &kp PLUS           &kp COLON        &kp SEMICOLON          &kp QUESTION      &kp PIPE
-&trans     &none                                                                                                                                  &none             &kp TAB
+&kp EXCL   &kp AT         &kp HASH              &kp DLLR           &kp PRCNT           &kp CARET          &kp MINUS        &kp UNDERSCORE         &kp AMPERSAND                    &kp ASTERISK
+&kp SLASH  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE     &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN                 &kp BACKSLASH
+&kp TILDE  &kp GRAVE      &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES  &kp EQUAL           &kp PLUS           &kp COLON        &kp SEMICOLON          &tapdance_questionm_cmdbacktick  &kp PIPE
+&trans     &none                                                                                                                                  &none                            &kp TAB
             >;
         };
 
